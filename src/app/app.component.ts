@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,13 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   loadedFeature = 'recipe';
+
+  ngOnInit() {
+    firebase.initializeApp({
+      apiKey: "AIzaSyBLOvU6jHtwcssZwU2OFBQTspNUULsYrlY",
+      authDomain: "angular-recipe-9336d.firebaseapp.com"
+    })
+  }
 
   onNavigate(feature: string) {
     this.loadedFeature = feature;
