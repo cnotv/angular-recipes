@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, Router } from '@angular/router';
+import { Routes, RouterModule, Router, PreloadAllModules } from '@angular/router';
 // import { CommonModule } from '@angular/common';
 
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
@@ -14,7 +14,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     // CommonModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
   ],
   exports: [
     RouterModule
